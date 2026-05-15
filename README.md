@@ -336,8 +336,8 @@ This highlights the importance of visual feature fine-tuning.
 ## Clone Repository
 
 ```bash
-git clone <your-repo-link>
-cd <repo-name>
+git clone https://github.com/syed-naqi-abbas/vlnce
+cd vlnce
 ```
 
 ## Install Dependencies
