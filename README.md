@@ -301,36 +301,6 @@ This highlights the importance of visual feature fine-tuning.
 
 ---
 
-# Challenges Faced
-
-* High GPU memory usage
-* Large DAgger trajectory storage
-* Long training times
-* Habitat-Sim dependency conflicts
-* Difficulty balancing SR and SPL
-* Generalization gap between seen and unseen environments
-
----
-
-# Limitations
-
-* Computationally expensive training
-* Dependence on pretrained visual encoders
-* Difficulty handling ambiguous instructions
-* Reduced robustness in unseen environments
-
----
-
-# Future Work
-
-* Transformer-based multimodal fusion
-* Larger language models
-* Better exploration strategies
-* Memory-augmented navigation
-* Reinforcement learning fine-tuning
-
----
-
 # Installation
 
 ## Install Habitat-Lab
@@ -393,6 +363,10 @@ Extract such that it has the form `data/scene_datasets/mp3d/{scene}/{scene}.glb`
 |-------------- |---------------------------- |------- |
 | [R2R_VLNCE_v1-3_preprocessed.zip](https://drive.google.com/file/d/1fo8F4NKgZDH-bPSdVU3cONAkt5EW-tyr/view) | `data/datasets/R2R_VLNCE_v1-3_preprocessed` | 250 MB |
 
+##### Encoder Weights
+
+Baseline models encode depth observations using a ResNet pre-trained on PointGoal navigation. Those weights can be downloaded from [here](https://github.com/facebookresearch/habitat-lab/tree/v0.1.7/habitat_baselines/rl/ddppo) (672M). Extract the contents to `data/ddppo-models/{model}.pth`.
+
 ## Download Checkpoints
 
 Download pretrained CMA weights from the following Google Drive link:
@@ -446,6 +420,35 @@ Open:
 ```text
 http://localhost:6006
 ```
+
+---
+# Challenges Faced
+
+* High GPU memory usage
+* Large DAgger trajectory storage
+* Long training times
+* Habitat-Sim dependency conflicts
+* Difficulty balancing SR and SPL
+* Generalization gap between seen and unseen environments
+
+---
+
+# Limitations
+
+* Computationally expensive training
+* Dependence on pretrained visual encoders
+* Difficulty handling ambiguous instructions
+* Reduced robustness in unseen environments
+
+---
+
+# Future Work
+
+* Transformer-based multimodal fusion
+* Larger language models
+* Better exploration strategies
+* Memory-augmented navigation
+* Reinforcement learning fine-tuning
 
 ---
 
