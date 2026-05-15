@@ -333,6 +333,33 @@ This highlights the importance of visual feature fine-tuning.
 
 # Installation
 
+## Install Habitat-Lab
+
+This project is developed with Python 3.6. If you are using [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [anaconda](https://anaconda.org/), you can create an environment:
+
+```bash
+conda create -n vlnce python=3.6
+conda activate vlnce
+```
+
+VLN-CE uses [Habitat-Sim](https://github.com/facebookresearch/habitat-sim/tree/v0.1.7) 0.1.7 which can be [built from source](https://github.com/facebookresearch/habitat-sim/tree/v0.1.7#installation) or installed from conda:
+
+```bash
+conda install -c aihabitat -c conda-forge habitat-sim=0.1.7 headless
+```
+
+Then install [Habitat-Lab](https://github.com/facebookresearch/habitat-lab/tree/v0.1.7):
+
+```bash
+git clone --branch v0.1.7 git@github.com:facebookresearch/habitat-lab.git
+cd habitat-lab
+# installs both habitat and habitat_baselines
+python -m pip install -r requirements.txt
+python -m pip install -r habitat_baselines/rl/requirements.txt
+python -m pip install -r habitat_baselines/rl/ddppo/requirements.txt
+python setup.py develop --all
+```
+
 ## Clone Repository
 
 ```bash
@@ -347,8 +374,26 @@ pip install -r requirements.txt
 ```
 
 ---
+## Data
 
-# Download Checkpoints
+#### Scenes: Matterport3D
+
+Matterport3D (MP3D) scene reconstructions are used. The official Matterport3D download script (`download_mp.py`) can be accessed by following the instructions on their [project webpage](https://niessner.github.io/Matterport/). The scene data can then be downloaded:
+
+```bash
+# requires running with python 2.7
+python download_mp.py --task habitat -o data/scene_datasets/mp3d/
+```
+
+Extract such that it has the form `data/scene_datasets/mp3d/{scene}/{scene}.glb`. There should be 90 scenes.
+
+#### Task Dataset
+
+| Dataset | Extract path | Size |
+|-------------- |---------------------------- |------- |
+| [R2R_VLNCE_v1-3_preprocessed.zip](https://drive.google.com/file/d/1fo8F4NKgZDH-bPSdVU3cONAkt5EW-tyr/view) | `data/datasets/R2R_VLNCE_v1-3_preprocessed` | 250 MB |
+
+## Download Checkpoints
 
 Download pretrained CMA weights from the following Google Drive link:
 
@@ -390,7 +435,7 @@ python run.py \
 
 ---
 
-# TensorBoard
+## TensorBoard
 
 ```bash
 tensorboard --logdir data/tensorboard_dirs/
@@ -408,7 +453,6 @@ http://localhost:6006
 
 * Habitat-Lab
 * Habitat-Sim
-* VLN-CE
 * Matterport3D
 * PyTorch
 * Facebook AI Research
@@ -418,7 +462,6 @@ http://localhost:6006
 # References
 
 1. Habitat-Lab: A Platform for Embodied AI Research
-2. VLN-CE: Vision-and-Language Navigation in Continuous Environments
 3. Matterport3D Dataset
 4. Room-to-Room (R2R) Dataset
 5. Cross-Modal Attention for Vision-Language Navigation
