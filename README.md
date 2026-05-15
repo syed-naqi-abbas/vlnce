@@ -353,7 +353,7 @@ pip install -r requirements.txt
 Download pretrained CMA weights from the following Google Drive link:
 
 ```text
-<PASTE_GOOGLE_DRIVE_LINK_HERE>
+https://drive.google.com/drive/folders/1KeUseBAxJlHwUd20EzZlZHpuyCZg615T?usp=sharing
 ```
 
 Place the downloaded weights inside:
@@ -365,7 +365,7 @@ data/checkpoints/cma/
 Example:
 
 ```text
-data/checkpoints/cma/model.pth
+data/checkpoints/cma/ckpt.11.pth
 ```
 
 ---
@@ -423,6 +423,3 @@ http://localhost:6006
 4. Room-to-Room (R2R) Dataset
 5. Cross-Modal Attention for Vision-Language Navigation
 6. DAgger: Dataset Aggregation for Imitation Learning
-
-```
-```
