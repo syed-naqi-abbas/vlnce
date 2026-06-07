@@ -3,6 +3,10 @@
 > Vision-and-Language Navigation (VLN) agent built using Habitat-Lab, CMA Policy, Matterport3D, and R2R-VLNCE datasets for embodied AI navigation tasks.
 
 ---
+## Authors
+
+- **Syed Naqi Abbas** - 2024AIB1087  
+- **Parth** - 2024AIB1012
 
 # Overview
 
